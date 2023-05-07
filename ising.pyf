@@ -1,0 +1,48 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module isingf ! in 
+    interface  ! in :isingf
+        module isingf ! in :isingf:isingmetro.f90
+            integer, public,parameter,optional :: dp=selected_real_kind(13)
+            integer, public,dimension(8) :: seed
+            integer, public :: l
+            integer, public :: n
+            integer, public :: m
+            integer, public :: nequi
+            integer, public :: nmcs
+            integer, public :: ic
+            real(kind=8), public,dimension(17) :: w
+            integer, allocatable,public,dimension(:,:) :: spin
+            real(kind=8), allocatable,public,dimension(:) :: datae
+            real(kind=8), allocatable,public,dimension(:) :: datac
+            real(kind=8), public :: t
+            real(kind=8), public :: e
+            real(kind=8), public :: k
+            real(kind=8), public :: j
+            character(len=3), public :: bconditions
+            character(len=6), public :: mcsselection
+            integer, public :: accept
+            subroutine init ! in :isingf:isingmetro.f90:isingf
+            end subroutine init
+            subroutine alloc ! in :isingf:isingmetro.f90:isingf
+            end subroutine alloc
+            subroutine metropolis ! in :isingf:isingmetro.f90:isingf
+            end subroutine metropolis
+            function deltaepbc(x,y) result (deltae_result) ! in :isingf:isingmetro.f90:isingf
+                integer intent(in) :: x
+                integer intent(in) :: y
+                integer :: deltae_result
+            end function deltaepbc
+            function deltaeobc(x,y) result (deltae_result) ! in :isingf:isingmetro.f90:isingf
+                integer intent(in) :: x
+                integer intent(in) :: y
+                integer :: deltae_result
+            end function deltaeobc
+        end module isingf
+    end interface 
+end python module isingf
+
+! This file was auto-generated with f2py (version:1.24.3).
+! See:
+! https://web.archive.org/web/20140822061353/http://cens.ioc.ee/projects/f2py2e
